@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хреноугольник Стива</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #eee;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        .hint {
+            font-size: 1.5em;
+            color: #ff6666;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+        img#main-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border: 4px solid #ffcc00;
+            box-shadow: 0 0 40px rgba(255, 204, 0, 0.5);
+        }
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        svg g {
+            pointer-events: all;
+        }
+        svg rect, svg polygon {
+            fill: transparent;
+            stroke: transparent;
+            transition: all 0.2s;
+        }
+        svg g:hover rect, svg g:hover polygon {
+            fill: rgba(255, 204, 0, 0.2);
+            stroke: #ffcc00;
+            stroke-width: 4;
+        }
+    </style>
+</head>
+<body>
+    <h1>ХРЕНОУГОЛЬНИК СТИВА — Версия 04</h1>
+    <div class="hint">ТЫКНИ В ЗОНУ НА КАРТИНКЕ, ЧТОБЫ УЗНАТЬ ВСЁ ОБ ЭТОМ УБЛЮДКЕ</div>
+    
+    <div class="container" id="main-container">
+        <img id="main-image" src="ver-04.png" alt="Хреноугольник Стива">
+        
+        <svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Thor -->
+            <g onclick="window.location.href='page_thor.html'">
+                <rect x="780" y="50" width="180" height="120" />
+                <title>Thor</title>
+            </g>
+            <!-- Sam -->
+            <g onclick="window.location.href='page_sam.html'">
+                <rect x="650" y="80" width="120" height="100" />
+                <title>Sam</title>
+            </g>
+            <!-- Soldier -->
+            <g onclick="window.location.href='page_soldier.html'">
+                <rect x="380" y="220" width="280" height="180" />
+                <title>Soldier</title>
+            </g>
+            <!-- Stark -->
+            <g onclick="window.location.href='page_stark.html'">
+                <rect x="320" y="380" width="220" height="140" />
+                <title>Stark</title>
+            </g>
+            <!-- Brok -->
+            <g onclick="window.location.href='page_brok.html'">
+                <rect x="280" y="520" width="180" height="140" />
+                <title>Brok</title>
+            </g>
+            <!-- Pitter -->
+            <g onclick="window.location.href='page_pitter.html'">
+                <rect x="850" y="380" width="140" height="140" />
+                <title>Pitter</title>
+            </g>
+            <!-- Rollins -->
+            <g onclick="window.location.href='page_rollins.html'">
+                <rect x="280" y="680" width="160" height="140" />
+                <title>Rollins</title>
+            </g>
+            <!-- Loki -->
+            <g onclick="window.location.href='page_loki.html'">
+                <rect x="650" y="780" width="220" height="180" />
+                <title>Loki</title>
+            </g>
+            <!-- Wade -->
+            <g onclick="window.location.href='page_wade.html'">
+                <rect x="520" y="920" width="140" height="140" />
+                <title>Wade</title>
+            </g>
+            <!-- Logan -->
+            <g onclick="window.location.href='page_logan.html'">
+                <rect x="380" y="1050" width="140" height="120" />
+                <title>Logan</title>
+            </g>
+            <!-- Zemo -->
+            <g onclick="window.location.href='page_zemo.html'">
+                <rect x="780" y="1050" width="160" height="140" />
+                <title>Zemo</title>
+            </g>
+        </svg>
+    </div>
+</body>
+</html>
