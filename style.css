@@ -1,0 +1,114 @@
+:root {
+  --page-bg: #121212;
+  --ink: #f7f4ec;
+  --accent: #d90cff;
+  --accent-soft: rgba(217, 12, 255, 0.24);
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, #2a252e 0, var(--page-bg) 48rem),
+    var(--page-bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.page {
+  min-width: 1050px; /* намеренно desktop-only */
+  padding: 34px;
+}
+
+.board {
+  position: relative;
+  width: min(1200px, calc(100vw - 68px));
+  margin: 0 auto;
+  box-shadow: 0 20px 75px rgba(0, 0, 0, 0.58);
+  overflow: hidden;
+}
+
+.board__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.hotspot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  border: 2px solid transparent;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+/* На спокойном экране есть едва заметный намёк, не кислотная эвакуация из борделя. */
+.hotspot::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 1px dashed rgba(255, 255, 255, 0.32);
+  opacity: 0.18;
+  transition: opacity 160ms ease;
+}
+
+.hotspot span {
+  position: relative;
+  z-index: 1;
+  padding: 0.22em 0.52em;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(12px, 1.25vw, 20px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(11, 8, 13, 0.76);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(217, 12, 255, 0.16), 0 0 24px rgba(217, 12, 255, 0.82), inset 0 0 28px rgba(217, 12, 255, 0.28);
+  transform: scale(1.025);
+}
+
+.hotspot:hover::before,
+.hotspot:focus-visible::before {
+  opacity: 0;
+}
+
+.hotspot:hover span,
+.hotspot:focus-visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hotspot:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hotspot:hover { animation: pulse 1.15s ease-in-out infinite alternate; }
+}
+
+@keyframes pulse {
+  to { box-shadow: 0 0 0 7px rgba(217, 12, 255, 0.10), 0 0 34px rgba(217, 12, 255, 0.96), inset 0 0 34px rgba(217, 12, 255, 0.33); }
+}

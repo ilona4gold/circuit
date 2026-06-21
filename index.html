@@ -1,146 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Хреноугольник Стива</title>
-    <style>
-        body {
-            background: #0a0a0a;
-            color: #eee;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #ffcc00;
-            margin-bottom: 10px;
-        }
-        .hint {
-            font-size: 1.5em;
-            color: #ff6666;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .container {
-            position: relative;
-            display: inline-block;
-            max-width: 100%;
-        }
-        img#main-image {
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-            border: 4px solid #ffcc00;
-            box-shadow: 0 0 40px rgba(255, 204, 0, 0.5);
-        }
-        svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        svg g {
-            pointer-events: all;
-        }
-        svg rect, svg polygon {
-            fill: transparent;
-            stroke: transparent;
-            transition: all 0.2s;
-        }
-        svg g:hover rect, svg g:hover polygon {
-            fill: rgba(255, 204, 0, 0.2);
-            stroke: #ffcc00;
-            stroke-width: 4;
-        }
-        .tooltip {
-            position: absolute;
-            background: rgba(0,0,0,0.9);
-            color: #ffcc00;
-            padding: 5px 10px;
-            border-radius: 4px;
-            pointer-events: none;
-            display: none;
-            z-index: 100;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Интерактивная схема</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>ХРЕНОУГОЛЬНИК СТИВА — Версия 04</h1>
+  <main class="page">
+    <section class="board" aria-label="Интерактивная схема персонажей">
+	   <h1>ХРЕНОУГОЛЬНИК СТИВА — Версия 04</h1>
     <div class="hint">ТЫКНИ В ЗОНУ НА КАРТИНКЕ, ЧТОБЫ УЗНАТЬ ВСЁ ОБ ЭТОМ УБЛЮДКЕ</div>
-    
-    <div class="container" id="main-container">
-        <img id="main-image" src="ver-04.png" alt="Хреноугольник Стива">
-        
-        <svg width="1200" height="1600" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Зоны будут добавлены ниже -->
-            <!-- Thor -->
-            <g onclick="window.location.href='page_thor.html'">
-                <rect x="780" y="50" width="180" height="120" />
-                <title>Thor</title>
-            </g>
-            <!-- Sam -->
-            <g onclick="window.location.href='page_sam.html'">
-                <rect x="650" y="80" width="120" height="100" />
-                <title>Sam</title>
-            </g>
-            <!-- Soldier -->
-            <g onclick="window.location.href='page_soldier.html'">
-                <rect x="380" y="220" width="280" height="180" />
-                <title>Soldier</title>
-            </g>
-            <!-- Stark -->
-            <g onclick="window.location.href='page_stark.html'">
-                <rect x="320" y="380" width="220" height="140" />
-                <title>Stark</title>
-            </g>
-            <!-- Brok -->
-            <g onclick="window.location.href='page_brok.html'">
-                <rect x="280" y="520" width="180" height="140" />
-                <title>Brok</title>
-            </g>
-            <!-- Pitter -->
-            <g onclick="window.location.href='page_pitter.html'">
-                <rect x="850" y="380" width="140" height="140" />
-                <title>Pitter</title>
-            </g>
-            <!-- Rollins -->
-            <g onclick="window.location.href='page_rollins.html'">
-                <rect x="280" y="680" width="160" height="140" />
-                <title>Rollins</title>
-            </g>
-            <!-- Loki -->
-            <g onclick="window.location.href='page_loki.html'">
-                <rect x="650" y="780" width="220" height="180" />
-                <title>Loki</title>
-            </g>
-            <!-- Wade -->
-            <g onclick="window.location.href='page_wade.html'">
-                <rect x="520" y="920" width="140" height="140" />
-                <title>Wade</title>
-            </g>
-            <!-- Logan -->
-            <g onclick="window.location.href='page_logan.html'">
-                <rect x="380" y="1050" width="140" height="120" />
-                <title>Logan</title>
-            </g>
-            <!-- Zemo -->
-            <g onclick="window.location.href='page_zemo.html'">
-                <rect x="780" y="1050" width="160" height="140" />
-                <title>Zemo</title>
-            </g>
-        </svg>
-    </div>
+      <img class="board__image" src="ver-04.png" alt="Интерактивная схема с карточками персонажей" />
 
-    <script>
-        // Простой тултип
-        const svg = document.querySelector('svg');
-        svg.addEventListener('mousemove', (e) => {
-            // Можно улучшить позже
-        });
-    </script>
+      <!-- Координаты взяты с ver-04-zone.png. Меняй href и подписи по мере готовности страниц. -->
+      <a class="hotspot" style="--x:85%; --y:9.6012%; --w:15%; --h:9.3058%;" href="p01.html" aria-label="Открыть страницу p01"><span>p01</span></a>
+      <a class="hotspot" style="--x:64%; --y:11.6691%; --w:12.8333%; --h:9.4535%;" href="p02.html" aria-label="Открыть страницу p02"><span>p02</span></a>
+      <a class="hotspot" style="--x:44.3333%; --y:23.3383%; --w:22.0833%; --h:11.8168%;" href="p03.html" aria-label="Открыть страницу p03"><span>p03</span></a>
+      <a class="hotspot" style="--x:39.5833%; --y:36.0906%; --w:14.75%; --h:12.5554%;" href="p04.html" aria-label="Открыть страницу p04"><span>p04</span></a>
+      <a class="hotspot" style="--x:39.5%; --y:53.9143%; --w:18.8333%; --h:11.2752%;" href="p05.html" aria-label="Открыть страницу p05"><span>p05</span></a>
+      <a class="hotspot" style="--x:82.8333%; --y:52.4372%; --w:17.1667%; --h:11.3737%;" href="p06.html" aria-label="Открыть страницу p06"><span>p06</span></a>
+      <a class="hotspot" style="--x:40.8333%; --y:70.8026%; --w:19%; --h:10.2413%;" href="p07.html" aria-label="Открыть страницу p07"><span>p07</span></a>
+      <a class="hotspot" style="--x:65%; --y:74.7415%; --w:21.75%; --h:11.1275%;" href="p08.html" aria-label="Открыть страницу p08"><span>p08</span></a>
+      <a class="hotspot" style="--x:89.3333%; --y:83.7518%; --w:10.6667%; --h:11.6691%;" href="p09.html" aria-label="Открыть страницу p09"><span>p09</span></a>
+      <a class="hotspot" style="--x:71.3333%; --y:87.0015%; --w:15.75%; --h:12.3092%;" href="p10.html" aria-label="Открыть страницу p10"><span>p10</span></a>
+      <a class="hotspot" style="--x:49.0833%; --y:89.2664%; --w:18.0833%; --h:10.7336%;" href="p11.html" aria-label="Открыть страницу p11"><span>p11</span></a>
+    </section>
+  </main>
 </body>
 </html>
