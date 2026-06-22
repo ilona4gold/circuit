@@ -55,7 +55,7 @@ body {
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
-/* На спокойном экране есть едва заметный намёк, не кислотная эвакуация из борделя. */
+
 .hotspot::before {
   content: "";
   position: absolute;
@@ -112,3 +112,15 @@ body {
 @keyframes pulse {
   to { box-shadow: 0 0 0 7px rgba(217, 12, 255, 0.10), 0 0 34px rgba(217, 12, 255, 0.96), inset 0 0 34px rgba(217, 12, 255, 0.33); }
 }
+
+.hint {
+            font-size: 1.5em;
+            color: #ff6666;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+ h1 {
+            color: #ffffff;
+			text-align: center;
+            margin-bottom: 10px;
+        }
