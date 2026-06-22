@@ -166,3 +166,9 @@ margin: 0 auto;
 .work{
 	text-align: center;
 }
+p{
+	 font-size: 1.5em;
+            color: #d4e3e8;
+            margin-bottom: 10px;
+			display: block;
+}
