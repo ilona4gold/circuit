@@ -1,8 +1,8 @@
 :root {
   --page-bg: #121212;
   --ink: #f7f4ec;
-  --accent: #d90cff;
-  --accent-soft: rgba(217, 12, 255, 0.24);
+  --accent: #5594f2;
+  --accent-soft: rgba(85, 148, 242, 0.24);
 }
 
 * { box-sizing: border-box; }
